@@ -1,0 +1,9 @@
+SERVER RECOVERY LINUX COMMANDS
+
+[*]     find /home/user/ -name xyz                                    #command to find a specific file in server eg : find /home/user/ -name index.php
+[*]     ls -1t | head -5                                              #last modified files 5
+[*]     find /etc -type f -printf '%TY-%Tm-%Td %TT %p\n' | sort -r    #show modified files in reverse order
+[*]     grep -RPn "(base64_decode|eval) *\(" public_html/             #search a specific contents in all files
+[*]     grep -RPn "(passthru|exec|eval|shell_exec|assert|str_rot13|system|phpinfo|base64_decode|chmod|mkdir|fopen|fclose|readfile) *\("    #shell hunting
+[*]     cat /var/log/apache2/access.log | awk -F\" ' { print $1,$2 } ' | grep "file"   #To check apache access log
+[*]     netstat -nputw    

@@ -6,4 +6,6 @@ SERVER RECOVERY LINUX COMMANDS
 [*]     grep -RPn "(base64_decode|eval) *\(" public_html/             #search a specific contents in all files
 [*]     grep -RPn "(passthru|exec|eval|shell_exec|assert|str_rot13|system|phpinfo|base64_decode|chmod|mkdir|fopen|fclose|readfile) *\("    #shell hunting
 [*]     cat /var/log/apache2/access.log | awk -F\" ' { print $1,$2 } ' | grep "file"   #To check apache access log
-[*]     netstat -nputw    
+[*]     netstat -nputw
+[*]     netstat -ntu|awk '{print $5}'|cut -d: -f1 -s|sort|uniq -c|sort -nk1 -r  #number of connections and ips (Ditect DDOS)
+[*]      grep -rnwl 'public_html' -e 'eval("?>"'      #find pattern matching files

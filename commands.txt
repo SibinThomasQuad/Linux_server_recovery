@@ -8,4 +8,5 @@ SERVER RECOVERY LINUX COMMANDS
 [*]     cat /var/log/apache2/access.log | awk -F\" ' { print $1,$2 } ' | grep "file"   #To check apache access log
 [*]     netstat -nputw
 [*]     netstat -ntu|awk '{print $5}'|cut -d: -f1 -s|sort|uniq -c|sort -nk1 -r  #number of connections and ips (Ditect DDOS)
-[*]      grep -rnwl 'public_html' -e 'eval("?>"'      #find pattern matching files
+[*]     grep -rnwl 'public_html' -e 'eval("?>"'      #find pattern matching files
+[*]     find /path -type f -name "*.htacess" -delete   #remove targeted files from all directorys and subdirectory
